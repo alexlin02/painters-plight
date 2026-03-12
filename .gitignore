@@ -1,0 +1,19 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+*.uid
+
+# Import metadata (auto-regenerated)
+*.import
+
+# Export files
+export/
+*.apk
+*.aab
+*.exe
+*.x86_64
+*.pck
+
+# OS files
+.DS_Store
+Thumbs.db
