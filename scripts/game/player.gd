@@ -13,6 +13,7 @@ var move_charges: Array = []
 
 func _ready():
 	grid_pos = start_position
+	print("player ", player_index, " starting at ", grid_pos)
 	position = grid_manager.grid_to_world(grid_pos.x, grid_pos.y)
 	grid_manager.grid[grid_pos.x][grid_pos.y]["occupant"] = self
 	

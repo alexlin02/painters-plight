@@ -35,6 +35,16 @@ func is_in_bounds(gx: int, gy: int) -> bool:
 func is_cell_free(gx: int, gy: int) -> bool:
 	return is_in_bounds(gx, gy) and grid[gx][gy]["occupant"] == null
 	
+func get_cell(gx: int, gy: int) -> Dictionary:
+	if not is_in_bounds(gx, gy):
+		return {}
+	return grid[gx][gy]
+
+func get_occupant(gx: int, gy: int):
+	if not is_in_bounds(gx, gy):
+		return {}
+	return grid[gx][gy]["occupant"]
+	
 # Painting
 func paint_cell(gx: int, gy: int, color: String):
 	if not is_in_bounds(gx, gy):

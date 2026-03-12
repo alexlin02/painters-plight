@@ -1,3 +1,4 @@
+class_name TurnManager
 extends Node
 
 enum Phase {
