@@ -65,7 +65,7 @@ func _mark_submitted(player_index: int):
 		active_player = 2
 	elif player_index == 2:
 		player2_submitted = true
-		active_player = 0
+		active_player = 1
 	print("active_player after: ", active_player)
 
 func _on_turn_resolved():

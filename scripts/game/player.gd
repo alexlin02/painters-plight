@@ -5,9 +5,11 @@ extends Node2D
 
 @onready var turn_manager = $"../../TurnManager"
 @onready var grid_manager = $"../../GridManager"
+@onready var sprite = $"Sprite2D"
 
 var grid_pos: Vector2i
 var move_range: int = 1
+var attack_range: int = 1
 var color_inventory: Array = []
 var move_charges: Array = []
 
@@ -16,7 +18,12 @@ func _ready():
 	print("player ", player_index, " starting at ", grid_pos)
 	position = grid_manager.grid_to_world(grid_pos.x, grid_pos.y)
 	grid_manager.grid[grid_pos.x][grid_pos.y]["occupant"] = self
-	
+
+func is_valid_attack_target(target: Vector2i):
+	var diff = target - grid_pos
+	var dist = max(abs(diff.x), abs(diff.y))
+	return dist <= attack_range and dist > 0
+
 func move(direction: Vector2i):
 	var steps = move_range
 	var target = grid_pos

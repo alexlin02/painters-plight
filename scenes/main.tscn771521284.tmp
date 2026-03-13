@@ -100,6 +100,7 @@ tile_set = SubResource("TileSet_tbgi4")
 
 [node name="Player1" type="Node2D" parent="Players"]
 script = ExtResource("5_tbgi4")
+player_index = null
 start_position = Vector2i(3, 6)
 
 [node name="Sprite2D" type="Sprite2D" parent="Players/Player1"]
